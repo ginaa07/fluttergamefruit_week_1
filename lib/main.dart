@@ -9,11 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Fruit Catcher Game', home: const GameScreen());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Fruit Catcher Game',
+      home: GameScreen(),
+    );
   }
 }
 
-class GameScreen extends StatelessWidget {
+class GameScreen extends StatefulWidget {
   const GameScreen({super.key});
 
   @override
@@ -22,12 +26,12 @@ class GameScreen extends StatelessWidget {
 
 class _GameScreenState extends State<GameScreen> {
   @override
- void initState() {
+  void initState() {
     super.initState();
     // Initialize game state here
   }
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -41,12 +45,13 @@ class _GameScreenState extends State<GameScreen> {
                 color: Colors.black54,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Text('Score 1',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              child: const Text(
+                'Score 1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
