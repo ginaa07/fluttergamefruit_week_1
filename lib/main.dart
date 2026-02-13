@@ -17,14 +17,9 @@ class GameScreen extends StatelessWidget {
   const GameScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'Game akan ditampilkan di sini',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
-    );
-  }
+  State<GameScreen> createState() => _GameScreenState();
 }
+
+class _GameScreenState extends State<GameScreen> {
+  @override
+ 
