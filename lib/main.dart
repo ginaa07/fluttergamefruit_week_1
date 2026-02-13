@@ -28,7 +28,6 @@ class _GameScreenState extends State<GameScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialize game state here
   }
 
   @override
@@ -36,6 +35,8 @@ class _GameScreenState extends State<GameScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          // Penambahan code di sini
+          //Untuk gambar Icon
           Positioned(
             top: 50,
             left: 20,
@@ -46,7 +47,7 @@ class _GameScreenState extends State<GameScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Text(
-                'Score 1',
+                'Score: 1',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -55,8 +56,10 @@ class _GameScreenState extends State<GameScreen> {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
+
+          Positioned(
+            top: 50,
+            right: 20,
+            child: Row(
+              children: [
+                
