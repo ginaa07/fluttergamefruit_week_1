@@ -50,7 +50,10 @@ class _GameScreenState extends State<GameScreen> {
                 color: Colors.black54,
                 borderRadius: BorderRadius.circular(10),
               ),
-              
+              child: ValueListenableBuilder<int>(
+  valueListenable: counter,
+  builder: (context, score, child) {
+    return Text(
             ),
           ),
 
