@@ -37,6 +37,10 @@ class _GameScreenState extends State<GameScreen> {
             left: 20,
             child: Container(
               padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
           )
         ],
