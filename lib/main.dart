@@ -27,4 +27,12 @@ class _GameScreenState extends State<GameScreen> {
     // Initialize game state here
   }
 
- 
+ @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Game elements go here
+        ],
+      ),
+    )
