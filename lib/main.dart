@@ -24,7 +24,11 @@ class GameScreen extends StatefulWidget {
   State<GameScreen> createState() => _GameScreenState();
 }
 
+
 class _GameScreenState extends State<GameScreen> {
+
+  final ValueNotifier<int> counter = ValueNotifier(1);
+  
   @override
   void initState() {
     super.initState();
