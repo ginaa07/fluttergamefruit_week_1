@@ -24,9 +24,7 @@ class GameScreen extends StatefulWidget {
   State<GameScreen> createState() => _GameScreenState();
 }
 
-
 class _GameScreenState extends State<GameScreen> {
-
   final ValueNotifier<int> counter = ValueNotifier(1);
 
   @override
@@ -51,9 +49,18 @@ class _GameScreenState extends State<GameScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: ValueListenableBuilder<int>(
-  valueListenable: counter,
-  builder: (context, score, child) {
-    return Text(
+                valueListenable: counter,
+                builder: (context, score, child) {
+                  return Text(
+                    'Score: $score',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
+              ),
             ),
           ),
 
@@ -63,13 +70,11 @@ class _GameScreenState extends State<GameScreen> {
             child: Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.music_note, 
-                  color: Colors.black),
+                  icon: const Icon(Icons.music_note, color: Colors.black),
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: const Icon(Icons.volume_up, 
-                  color: Colors.black),
+                  icon: const Icon(Icons.volume_up, color: Colors.black),
                   onPressed: () {},
                 ),
               ],
