@@ -43,6 +43,7 @@ class _GameScreenState extends State<GameScreen> {
         children: [
           // Penambahan code di sini
           //Untuk gambar Icon
+          GameWidget(game: game),
           Positioned(
             top: 50,
             left: 20,
