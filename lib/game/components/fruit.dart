@@ -55,4 +55,8 @@ switch (type) {
 case FruitType.apple:
 paint.color = Colors.red;
 break;
+
+case FruitType.banana:
+paint.color = Colors.yellow;
+break;
 }
