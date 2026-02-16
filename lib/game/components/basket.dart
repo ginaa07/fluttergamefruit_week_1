@@ -10,5 +10,8 @@ class Basket extends PositionComponent
   Future<void> onLoad() async {
     await super.onLoad();
     position = Vector2(gameRef.size.x / 2, gameRef.size.y - 100);
+
+    anchor = Anchor.center;
+    add(RectangleHitbox());
   }
   
