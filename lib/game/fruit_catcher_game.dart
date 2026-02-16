@@ -6,8 +6,8 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:latihanfluttergame_week1/game/components/basket.dart';
 
-
-class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
+class FruitCatcherGame extends FlameGame
+    with PanDetector, HasCollisionDetection {
   late Basket basket;
   late TextComponent scoreText;
 
@@ -15,22 +15,19 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   double fruitSpawnTimer = 0;
   final double fruitSpawnInterval = 1.5;
 
-
   final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
   int _score = 0;
   int get score => _score;
   set score(int value) {
-  _score = value;
-  scoreNotifier.value = value;
-
+    _score = value;
+    scoreNotifier.value = value;
   }
- 
+
   @override
   Future<void> onLoad() async {
     await super.onLoad();
     // Set background color
-    camera.viewport = FixedResolutionViewport(
-      resolution: Vector2(400, 800));
+    camera.viewport = FixedResolutionViewport(resolution: Vector2(400, 800));
 
     //Add Basket
     basket = Basket();
@@ -46,40 +43,43 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
 
     //Spawn fruits
     fruitSpawnTimer += dt;
-    if (fruitSpawnTimer >=fruitSpawnInterval) {
+    if (fruitSpawnTimer >= fruitSpawnInterval) {
       spawnFruit();
       fruitSpawnTimer = 0;
     }
   }
-   
-   void spawnFruit() {
+
+  void spawnFruit() {
     final double x = random.nextDouble() * size.x;
     final fruit = Fruit(position: Vector2(x, -50));
     add(fruit);
-   }
+  }
 
-   @override
-   void onPadUpdate(DragUpdateInfo info) {
+  @override
+  void onPadUpdate(DragUpdateInfo info) {
     basket.position.x += info.delta.global.x;
-    basket.position.x = basket.position.x.clamp(basket.size.x/ 2, 
-    size.x - basket.size.x / 2);
-   }
-   
-   void incrementScore() {
+    basket.position.x = basket.position.x.clamp(
+      basket.size.x / 2,
+      size.x - basket.size.x / 2,
+    );
+  }
+
+  void incrementScore() {
     score++;
     AudioManager().playSfx('collect.mp3');
   }
-  
+
   void gameOver() {
     AudioManager().playSfx('explosion.mp3');
     pauseEngine();
-  
+  }
+
+  @override
+  void onRemove() {
+    AudioManager().stopBackgroundMusic();
+    super.onRemove();
   }
 }
 
-
-
-
-
 @override
-  Color backgroundColor() => const Color(0xFF87CEEB); // sky blue
+Color backgroundColor() => const Color(0xFF87CEEB); // sky blue
