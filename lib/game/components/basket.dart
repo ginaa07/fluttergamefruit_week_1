@@ -27,6 +27,7 @@ class Basket extends PositionComponent with HasGameRef, CollisionCallbacks {
       Rect.fromLTWH(0, 0, size.x, size.y),
       const Radius.circular(10),
     );
+    canvas.drawRRect(rect, paint);
 
     final handlePaint = Paint()
       ..color = Colors.brown[800]!
