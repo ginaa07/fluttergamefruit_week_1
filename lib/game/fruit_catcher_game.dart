@@ -44,7 +44,8 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     //Spawn fruits
     fruitSpawnTimer += dt;
     if (fruitSpawnTimer >=fruitSpawnInterval) {
-      
+      spawnFruit();
+      fruitSpawnTimer = 0;
     }
   }
 }
