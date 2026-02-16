@@ -35,6 +35,19 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     basket = Basket();
     await add(basket);
 
+    scoreText = TextComponent(
+      text: 'Score: 0',
+      position: Vector2(20, 40),
+      textRenderer: TextPaint(
+        style: const TextStyle(
+          fontSize: 24,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+    await add(scoreText);
+
     //Play background music
     await AudioManager().playBackgroundMusic(); //update
   }
