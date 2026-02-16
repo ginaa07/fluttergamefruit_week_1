@@ -31,3 +31,8 @@ print('Audio initialized successfully');
 print('Error initializing audio: $e');
 }
 }
+
+// Play background music
+void playBackgroundMusic() {
+if (_isMusicEnabled) {
+try {
