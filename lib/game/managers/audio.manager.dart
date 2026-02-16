@@ -130,3 +130,11 @@ if (!_isMusicEnabled) {
 _isMusicEnabled = true;
 resumeBackgroundMusic();
 }
+}
+
+void disableMusic() {
+if (_isMusicEnabled) {
+_isMusicEnabled = false;
+pauseBackgroundMusic();
+}
+}
