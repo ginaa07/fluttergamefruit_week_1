@@ -23,4 +23,17 @@ class Fruit extends PositionComponent
     anchor = Anchor.center;
     add(CircleHitbox());
   }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+
+    // Move fruit down
+    position.y += fallSpeed * dt;
+    
+    // Remove if off screen
+    if (position.y > gameRef.size.y + 50) {
+      removeFromParent();
+    }
+  }
 }
