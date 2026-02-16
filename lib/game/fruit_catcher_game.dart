@@ -56,7 +56,7 @@ class FruitCatcherGame extends FlameGame
   }
 
   @override
-  void onPadUpdate(DragUpdateInfo info) {
+  void onPanUpdate(DragUpdateInfo info) {
     basket.position.x += info.delta.global.x;
     basket.position.x = basket.position.x.clamp(
       basket.size.x / 2,
