@@ -20,11 +20,14 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   set score(int value) {
   _score = value;
   scoreNotifier.value = value;
+
+  }
  
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    //Play background music
+    // Set background color
+    camera.viewport = FixedResolutionViewport(resolution: Vector2(400, 800));
     AudioManager().playBackgroundMusic(); //update
   }
 }
