@@ -10,6 +10,7 @@ import 'package:latihanfluttergame_week1/game/components/basket.dart';
 class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
   late Basket basket;
   late TextComponent scoreText;
+
   final Random random = Random();
   double fruitSpawnTimer = 0;
   final double fruitSpawnInterval = 1.5;
@@ -34,13 +35,15 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     //Add Basket
     basket = Basket();
     await add(basket);
+
     //Play background music
-    AudioManager().playBackgroundMusic(); //update
+    await AudioManager().playBackgroundMusic(); //update
   }
 
   @override
   void update(double dt) {
     super.update(dt);
+
     //Spawn fruits
     fruitSpawnTimer += dt;
     if (fruitSpawnTimer >=fruitSpawnInterval) {
@@ -50,10 +53,13 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   }
    
    void spawnFruit() {
-    final x = random.nextDouble() * size.x;
+    final double x = random.nextDouble() * size.x;
     final fruit = Fruit(position: Vector2(x, -50));
     add(fruit);
    }
+
+   @override
+   void onPadUpdate(DragUpdateInfo)
 }
 
 
