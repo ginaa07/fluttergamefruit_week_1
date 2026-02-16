@@ -4,10 +4,10 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+
 import 'package:latihanfluttergame_week1/game/components/basket.dart';
 
-class FruitCatcherGame extends FlameGame
-    with PanDetector, HasCollisionDetection {
+class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
   late Basket basket;
   late TextComponent scoreText;
 
@@ -17,10 +17,12 @@ class FruitCatcherGame extends FlameGame
 
   final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
   int _score = 0;
+
   int get score => _score;
   set score(int value) {
     _score = value;
     scoreNotifier.value = value;
+    scoreText.text = 'Score: $_score';
   }
 
   @override
