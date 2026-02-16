@@ -61,6 +61,8 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
    @override
    void onPadUpdate(DragUpdateInfo info) {
     basket.position.x += info.delta.global.x;
+    basket.position.x = basket.position.x.clamp(basket.size.x/ 2, 
+    size.x - basket.size.x / 2);
    }
 }
 
