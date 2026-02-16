@@ -4,6 +4,7 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:latihanfluttergame_week1/game/components/basket.dart';
 
 
 class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
@@ -27,7 +28,15 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   Future<void> onLoad() async {
     await super.onLoad();
     // Set background color
-    camera.viewport = FixedResolutionViewport(resolution: Vector2(400, 800));
+    camera.viewport = FixedResolutionViewport(
+      resolution: Vector2(400, 800));
+
+    //Add Basket
+    basket = Basket();
+    await add(basket);
+
+
+
     AudioManager().playBackgroundMusic(); //update
   }
 }
