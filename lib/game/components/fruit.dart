@@ -15,3 +15,4 @@ import 'basket.dart';
       
       Fruit({super.position})
       : type = FruitType.values[Random().nextInt(FruitType.values.length)],
+        super(size: Vector2.all(40));
