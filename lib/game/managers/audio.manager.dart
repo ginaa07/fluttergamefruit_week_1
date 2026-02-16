@@ -62,13 +62,24 @@ print('Error pausing background music: $e');
 }
 }
 
-/// Resume background music
+//Resume background music
 void resumeBackgroundMusic() {
 if (_isMusicEnabled) {
 try {
 FlameAudio.bgm.resume();
 } catch (e) {
 print('Error resuming background music: $e');
+}
+}
+}
+
+//Play sound effect
+void playSfx(String fileName) {
+if (_isSfxEnabled) {
+try {
+FlameAudio.play('sfx/$fileName', volume: _sfxVolume);
+} catch (e) {
+print('Error playing SFX: $e');
 }
 }
 }
