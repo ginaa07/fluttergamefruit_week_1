@@ -6,7 +6,6 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 
-
 class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
   late Basket basket;
   late TextComponent scoreText;
@@ -14,11 +13,11 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   double fruitSpawnTimer = 0;
   final double fruitSpawnInterval = 1.5;
 
-  @override
-  Color backgroundColor() => const Color(0xFF87CEEB); // sky blue
- 
-  final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
 
+  final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
+  int _score = 0;
+  
+ 
   @override
   Future<void> onLoad() async {
     await super.onLoad();
@@ -26,3 +25,10 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     AudioManager().playBackgroundMusic(); //update
   }
 }
+
+
+
+
+
+@override
+  Color backgroundColor() => const Color(0xFF87CEEB); // sky blue
