@@ -148,3 +148,12 @@ _isSfxEnabled = true;
 void disableSfx() {
 _isSfxEnabled = false;
 }
+
+void dispose() {
+try {
+FlameAudio.bgm.dispose();
+} catch (e) {
+print('Error disposing audio: $e');
+}
+}
+}
