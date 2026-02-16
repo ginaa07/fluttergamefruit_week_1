@@ -83,3 +83,10 @@ print('Error playing SFX: $e');
 }
 }
 }
+
+//Play sound effect with custom volume
+void playSfxWithVolume(String fileName, double volume) {
+if (_isSfxEnabled) {
+try {
+final adjustedVolume = (volume * _sfxVolume).clamp(0.
+0, 1.0);
