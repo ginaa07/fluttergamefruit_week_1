@@ -61,3 +61,14 @@ FlameAudio.bgm.pause();
 print('Error pausing background music: $e');
 }
 }
+
+/// Resume background music
+void resumeBackgroundMusic() {
+if (_isMusicEnabled) {
+try {
+FlameAudio.bgm.resume();
+} catch (e) {
+print('Error resuming background music: $e');
+}
+}
+}
