@@ -47,30 +47,38 @@ class Fruit extends PositionComponent
   }
 
   @override
-void render(Canvas canvas) {
-super.render(canvas);
-final paint = Paint()..style = PaintingStyle.fill;
+  void render(Canvas canvas) {
+    super.render(canvas);
+    final paint = Paint()..style = PaintingStyle.fill;
 
-switch (type) {
-case FruitType.apple:
-paint.color = Colors.red;
-break;
+    switch (type) {
+      case FruitType.apple:
+        paint.color = Colors.red;
+        break;
 
-case FruitType.banana:
-paint.color = Colors.yellow;
-break;
+      case FruitType.banana:
+        paint.color = Colors.yellow;
+        break;
 
-case FruitType.orange:
-paint.color = Colors.orange;
-break;
+      case FruitType.orange:
+        paint.color = Colors.orange;
+        break;
 
-case FruitType.strawberry:
-paint.color = Colors.pink;
-break;
+      case FruitType.strawberry:
+        paint.color = Colors.pink;
+        break;
+    }
+
+    canvas.drawCircle(Offset(size.x / 2, size.y / 2), size.x / 2, paint);
+
+    final shinePaint = Paint()
+      ..color = Colors.white.withOpacity(0.3)
+      ..style = PaintingStyle.fill;
+
+    canvas.drawCircle(
+      Offset(size.x / 2 - 5, size.y / 2 - 5),
+      size.x / 5,
+      shinePaint,
+    );
+  }
 }
-
-canvas.drawCircle(Offset(size.x / 2, size.y / 2), size.x / 2, paint);
-
-final shinePaint = Paint()
-..color = Colors.white.withOpacity(0.3)
-..style = PaintingStyle.fill;
