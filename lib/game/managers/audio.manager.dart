@@ -25,3 +25,9 @@ await FlameAudio.audioCache.loadAll([
 'sfx/explosion.mp3',
 'sfx/jump.mp3',
 ]);
+
+print('Audio initialized successfully');
+} catch (e) {
+print('Error initializing audio: $e');
+}
+}
