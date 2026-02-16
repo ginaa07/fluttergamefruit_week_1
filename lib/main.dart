@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
+import 'package:latihanfluttergame_week1/game/managers/audio.manager.dart';
 import 'game/fruit_catcher_game.dart';
+import 'package:latihanfluttergame_week1/main.dart';
+
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   //Initialize audio
-  await AudioManager().initState();
+  await AudioManager().initialize();
   runApp(const MyApp());
 }
 

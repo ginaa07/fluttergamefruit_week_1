@@ -6,6 +6,8 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import 'package:latihanfluttergame_week1/game/components/basket.dart';
+import 'package:latihanfluttergame_week1/game/components/fruit.dart';
+import 'package:latihanfluttergame_week1/game/managers/audio.manager.dart';
 
 class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
   late Basket basket;
@@ -49,7 +51,7 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     await add(scoreText);
 
     //Play background music
-    await AudioManager().playBackgroundMusic(); //update
+    AudioManager().playBackgroundMusic(); //update
   }
 
   @override
