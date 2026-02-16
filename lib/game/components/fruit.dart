@@ -13,3 +13,5 @@ import 'basket.dart';
       final FruitType type;
       final double fallSpeed = 200;
       
+      Fruit({super.position})
+      : type = FruitType.values[Random().nextInt(FruitType.values.length)],
