@@ -6,13 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:latihanfluttergame_week1/game/fruit_catcher_game.dart';
 import 'basket.dart';
 
-  enum FruitType { apple, banana, orange, strawberry }
+enum FruitType { apple, banana, orange, strawberry }
 
-  class Fruit extends PositionComponent 
+class Fruit extends PositionComponent
     with HasGameRef<FruitCatcherGame>, CollisionCallbacks {
-      final FruitType type;
-      final double fallSpeed = 200;
-      
-      Fruit({super.position})
-      : type = FruitType.values[Random().nextInt(FruitType.values.length)],
-        super(size: Vector2.all(40));
+  final FruitType type;
+  final double fallSpeed = 200;
+
+  Fruit({super.position})
+    : type = FruitType.values[Random().nextInt(FruitType.values.length)],
+      super(size: Vector2.all(40));
+
+  @override
+  Future<void> onLoad() async {
+    await super.onLoad();
+    anchor = Anchor.center;
+    add(CircleHitbox());
+  }
+}
