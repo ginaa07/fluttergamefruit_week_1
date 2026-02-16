@@ -31,12 +31,10 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     camera.viewport = FixedResolutionViewport(
       resolution: Vector2(400, 800));
 
-    //add Basket
+    //Add Basket
     basket = Basket();
     await add(basket);
-
-
-
+    //Play background music
     AudioManager().playBackgroundMusic(); //update
   }
 }
