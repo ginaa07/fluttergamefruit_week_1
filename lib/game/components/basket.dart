@@ -18,6 +18,7 @@ class Basket extends PositionComponent
    @override
    void render(Canvas canvas) {
     super.render(canvas);
+
     final paint = Paint()
     ..color = Colors.brown
     ..style = PaintingStyle.fill;
@@ -31,6 +32,7 @@ class Basket extends PositionComponent
     final handlePath = Path()
     ..moveTo(10, 0)
     ..quadraticBezierTo(size.x / 2, -20, size.x - 10, 0);
+    
     canvas.drawPath(handlePath, handlePaint);
    }
 }
