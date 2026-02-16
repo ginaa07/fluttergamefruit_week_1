@@ -30,9 +30,18 @@ class Fruit extends PositionComponent
 
     // Move fruit down
     position.y += fallSpeed * dt;
-    
+
     // Remove if off screen
     if (position.y > gameRef.size.y + 50) {
+      removeFromParent();
+    }
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
+    super.onCollision(intersectionPoints, other);
+    if (other is Basket) {
+      gameRef.incrementScore();
       removeFromParent();
     }
   }
