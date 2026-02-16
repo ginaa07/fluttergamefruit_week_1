@@ -6,3 +6,4 @@ AudioManager._internal();
 
 bool _isMusicEnabled = true;
 bool _isSfxEnabled = true;
+double _musicVolume = 0.7;
