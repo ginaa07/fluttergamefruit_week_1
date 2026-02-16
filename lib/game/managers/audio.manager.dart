@@ -5,3 +5,4 @@ factory AudioManager() => _instance;
 AudioManager._internal();
 
 bool _isMusicEnabled = true;
+bool _isSfxEnabled = true;
