@@ -51,6 +51,7 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
    
    void spawnFruit() {
     final x = random.nextDouble() * size.x;
+    final fruit = Fruit(position: Vector2(x, -50));
    }
 }
 
