@@ -14,4 +14,12 @@ class Basket extends PositionComponent
     anchor = Anchor.center;
     add(RectangleHitbox());
   }
-  
+   
+   @override
+   void render(Canvas canvas) {
+    super.render(canvas);
+    final paint = Paint()
+    ..color = Colors.brown
+    ..style = PaintingStyle.fill;
+    
+   }
