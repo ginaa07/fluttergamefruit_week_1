@@ -37,6 +37,12 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     //Play background music
     AudioManager().playBackgroundMusic(); //update
   }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    //Spawn fruits
+  }
 }
 
 
