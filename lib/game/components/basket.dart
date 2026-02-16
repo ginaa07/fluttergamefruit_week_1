@@ -21,5 +21,10 @@ class Basket extends PositionComponent
     final paint = Paint()
     ..color = Colors.brown
     ..style = PaintingStyle.fill;
-    
+
+    //Draw basket
+    final handlePaint = Paint()
+    ..color = Colors.brown[800]!
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 3;
    }
