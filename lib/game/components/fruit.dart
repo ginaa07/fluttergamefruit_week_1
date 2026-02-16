@@ -63,4 +63,8 @@ break;
 case FruitType.orange:
 paint.color = Colors.orange;
 break;
+
+case FruitType.strawberry:
+paint.color = Colors.pink;
+break;
 }
