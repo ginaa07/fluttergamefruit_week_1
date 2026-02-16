@@ -52,3 +52,12 @@ FlameAudio.bgm.stop();
 print('Error stopping background music: $e');
 }
 }
+
+//Pause background music
+void pauseBackgroundMusic() {
+try {
+FlameAudio.bgm.pause();
+} catch (e) {
+print('Error pausing background music: $e');
+}
+}
