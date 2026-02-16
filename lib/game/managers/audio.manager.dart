@@ -138,3 +138,8 @@ _isMusicEnabled = false;
 pauseBackgroundMusic();
 }
 }
+
+//Enable sound effects
+void enableSfx() {
+_isSfxEnabled = true;
+}
