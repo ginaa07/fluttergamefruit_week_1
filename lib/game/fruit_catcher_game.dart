@@ -16,7 +16,10 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
 
   final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
   int _score = 0;
-  
+  int get score => _score;
+  set score(int value) {
+  _score = value;
+  scoreNotifier.value = value;
  
   @override
   Future<void> onLoad() async {
