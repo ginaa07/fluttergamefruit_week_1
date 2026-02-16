@@ -68,7 +68,13 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
    void incrementScore() {
     score++;
     AudioManager().playSfx('collect.mp3');
-}
+  }
+  
+  void gameOver() {
+    AudioManager().playSfx('explosion.mp3');
+    pauseEngine();
+  
+  }
 }
 
 
