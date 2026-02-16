@@ -50,4 +50,9 @@ class Fruit extends PositionComponent
 void render(Canvas canvas) {
 super.render(canvas);
 final paint = Paint()..style = PaintingStyle.fill;
+
+switch (type) {
+case FruitType.apple:
+paint.color = Colors.red;
+break;
 }
