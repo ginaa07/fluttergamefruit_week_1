@@ -120,3 +120,7 @@ resumeBackgroundMusic();
 pauseBackgroundMusic();
 }
 }
+
+void toggleSfx() {
+_isSfxEnabled = !_isSfxEnabled;
+}
