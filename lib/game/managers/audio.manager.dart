@@ -111,3 +111,12 @@ print('Error setting music volume: $e');
 void setSfxVolume(double volume) {
 _sfxVolume = volume.clamp(0.0, 1.0);
 }
+
+void toggleMusic() {
+_isMusicEnabled = !_isMusicEnabled;
+if (_isMusicEnabled) {
+resumeBackgroundMusic();
+} else {
+pauseBackgroundMusic();
+}
+}
