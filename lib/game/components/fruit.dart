@@ -45,4 +45,9 @@ class Fruit extends PositionComponent
       removeFromParent();
     }
   }
+
+  @override
+void render(Canvas canvas) {
+super.render(canvas);
+final paint = Paint()..style = PaintingStyle.fill;
 }
