@@ -11,7 +11,7 @@ import 'package:latihanfluttergame_week1/game/managers/audio.manager.dart';
 
 class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
   late Basket basket;
-  late TextComponent scoreText;
+
 
   final Random random = Random();
   double fruitSpawnTimer = 0;
@@ -24,7 +24,6 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   set score(int value) {
     _score = value;
     scoreNotifier.value = value;
-    scoreText.text = 'Score: $_score';
   }
 
   @override
@@ -36,19 +35,6 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     //Add Basket
     basket = Basket();
     await add(basket);
-
-    scoreText = TextComponent(
-      text: 'Score: 0',
-      position: Vector2(20, 40),
-      textRenderer: TextPaint(
-        style: const TextStyle(
-          fontSize: 24,
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-    await add(scoreText);
 
     //Play background music
     AudioManager().playBackgroundMusic(); //update
