@@ -1,9 +1,9 @@
 # 🍎 Fruit Catcher Game - Week 1
 
 ## 👤 Profil Pengembang
-- **Nama** : Nama Lengkap Kamu
-- **Kelas** : Nama Kelas
-- **Prodi** : Program Studi
+- **Nama** : Regina Safarina
+- **Kelas** : TI SE 2 
+- **Prodi** : Teknik Informatika
 
 ---
 
