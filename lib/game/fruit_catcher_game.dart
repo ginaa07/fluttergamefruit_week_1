@@ -9,14 +9,15 @@ import 'package:latihanfluttergame_week1/game/components/basket.dart';
 import 'package:latihanfluttergame_week1/game/components/fruit.dart';
 import 'package:latihanfluttergame_week1/game/managers/audio.manager.dart';
 
-class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection {
+class FruitCatcherGame extends FlameGame
+    with PanDetector, HasCollisionDetection {
   late Basket basket;
 
   final Random random = Random();
   double fruitSpawnTimer = 0;
   final double fruitSpawnInterval = 1.5;
 
-  int score = 0;
+  final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
 
   @override
   Future<void> onLoad() async {
@@ -24,12 +25,11 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
 
     camera.viewport = FixedResolutionViewport(resolution: Vector2(400, 800));
 
-  
     basket = Basket();
     await add(basket);
-    
 
-    AudioManager().playBackgroundMusic(); 
+    // Jalankan musik
+    AudioManager().playBackgroundMusic();
   }
 
   @override
@@ -52,25 +52,20 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
   @override
   void onPanUpdate(DragUpdateInfo info) {
     basket.position.x += info.delta.global.x;
-
-    
     basket.position.x = basket.position.x.clamp(
       basket.size.x / 2,
       size.x - basket.size.x / 2,
     );
   }
 
-  
   void incrementScore() {
-    score++;
+    scoreNotifier.value++;
     AudioManager().playSfx('collect.mp3');
   }
 
-  
   void gameOver() {
     AudioManager().playSfx('explosion.mp3');
-    pauseEngine(); // Menghentikan game
-    
+    pauseEngine();
   }
 
   @override
@@ -78,7 +73,7 @@ class FruitCatcherGame extends FlameGame with PanDetector, HasCollisionDetection
     AudioManager().stopBackgroundMusic();
     super.onRemove();
   }
-  
+
   @override
-  Color backgroundColor() => const Color(0xFF87CEEB); // Sky Blue
+  Color backgroundColor() => const Color(0xFF87CEEB);
 }

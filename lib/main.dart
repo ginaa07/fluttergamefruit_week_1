@@ -65,7 +65,7 @@ class _GameScreenState extends State<GameScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: ValueListenableBuilder<int>(
-                valueListenable: counter,
+                valueListenable: game.scoreNotifier,
                 builder: (context, score, child) {
                   return Text(
                     'Score: $score',
