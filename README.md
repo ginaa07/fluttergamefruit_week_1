@@ -9,8 +9,8 @@
 
 ## 📸 Screenshots
 <p align="center">
-  <img src="c:\Users\hp5CD\Downloads\image1.jpeg" width="300" alt="fruit game">
-  <img src="c:\Users\hp5CD\Downloads\image2.jpeg" width="300" alt="fruit game">
+  <img src="assets/images/image1.jpeg" width="300" alt="fruit game">
+  <img src="assets/images/image1.jpeg" width="300" alt="fruit game">
 </p>
 
 ---
