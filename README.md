@@ -1,16 +1,24 @@
-# latihanfluttergame_week1
+# 🍎 Fruit Catcher Game - Week 1
 
-A new Flutter project.
+## 👤 Profil Pengembang
+- **Nama** : Nama Lengkap Kamu
+- **Kelas** : Nama Kelas
+- **Prodi** : Program Studi
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📸 Screenshots
+<p align="center">
+  <img src="c:\Users\hp5CD\Downloads\image1.jpeg" width="300" alt="fruit game">
+  <img src="c:\Users\hp5CD\Downloads\image2.jpeg" width="300" alt="fruit game">
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📝 Deskripsi
+Game ini adalah aplikasi sederhana yang dibuat menggunakan **Flutter** dan **Flame Engine**. Pemain harus menggerakkan keranjang untuk menangkap buah yang jatuh dan mengumpulkan skor sebanyak mungkin.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Fitur Utama:
+* **Smooth Controls**: Menggunakan `PanDetector` untuk pergerakan basket yang responsif.
+* **Audio Management**: Musik latar dan efek suara saat menangkap buah.
+* **Real-time Scoring**: Tampilan skor yang diperbarui secara instan menggunakan `ValueNotifier`.
