@@ -2,7 +2,7 @@
 
 ## 👤 Profil Pengembang
 - **Nama** : Regina Safarina
-- **Kelas** : TI SE 2 
+- **Kelas** : TI SE 2 23 P2
 - **Prodi** : Teknik Informatika
 
 ---
